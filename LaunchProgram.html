@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<META HTTP-EQUIV="Expires" CONTENT="-1">
+		<meta charset="utf-8" />
+		<title>Campaign Launcher</title>
+		
+		<script type="text/JavaScript" src="global.js?n=1"></script> 
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.css" />
+		<link rel="stylesheet" href="assets/css/colorbox.css" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" />
+		<![endif]-->
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="assets/js/ace-extra.min.js"></script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			.pull-right {
+				padding-right:20px;
+			}
+		</style>
+	</head>
+
+	<body class="no-skin">
+		<!-- #section:basics/navbar.layout -->
+		<div id="navbar" class="navbar navbar-default">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle -->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a href="#" class="navbar-brand">
+						<small>
+							
+							<!-- <span id='AccountName'></span> -->
+							<img src="image/MFStudioLogo.png">
+						</small>
+					</a>
+
+					<!-- /section:basics/navbar.layout.brand -->
+
+					<!-- #section:basics/navbar.toggle -->
+
+					<!-- /section:basics/navbar.toggle -->
+				</div>
+
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						
+
+						
+					</ul>
+				</div>
+
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<!-- #section:basics/sidebar -->
+			<div id="sidebar" class="sidebar                  responsive">
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				</script>
+
+				
+
+				<ul class="nav nav-list">
+					<li class="">
+						<a href="#">
+							<i></i>
+							<span class="menu-text"> </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+					<li class="">
+						<a href="dashboard.html">
+							<i class="menu-icon fa fa-home"></i>
+							<span class="menu-text"> Home </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+					
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-user"></i>
+							<span class="menu-text"> Contacts </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="contacts.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Upload Contacts
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="viewContacts.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									View Contacts
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="contactTemplate.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Contact Templates
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							
+						</ul>
+
+					</li>
+
+					<li class="active">
+						<a href="Maml.html">
+							<i class="menu-icon fa fa-list-alt"></i>
+							<span class="menu-text"> Launch Program </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="" style="display: None;">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text"> Admin </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="Account.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<span class="menu-text"> Account </span>
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="users.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<span class="menu-text"> User </span>
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							
+						</ul>
+
+					</li>
+
+					<li class="">
+						
+						<a href="javascript:void(0)" onclick="logout();">
+							<i class="menu-icon fa fa-power-off"></i>
+							<span class="menu-text"> Logout </span>							
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					
+
+					
+
+					
+				</ul><!-- /.nav-list -->
+
+				<!-- #section:basics/sidebar.layout.minimize -->
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+
+				<!-- /section:basics/sidebar.layout.minimize -->
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+			</div>
+
+			<!-- /section:basics/sidebar -->			
+			<div class="main-content">
+				<!-- #section:basics/content.breadcrumbs -->
+				<div class="breadcrumbs" id="breadcrumbs">
+					<script type="text/javascript">
+						try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+					</script>
+
+					<!-- <ul class="breadcrumb"> -->
+					<ul class="breadcrumb" style="width: 95%;">
+						
+
+						<li>
+							Launch Program
+						</li>						
+						<li class="active" id='programName' ></li>					
+						<span class="pull-right" id='loginInfo' ></span>					
+					</ul>
+
+					<!-- /.breadcrumb -->
+
+					
+				</div>
+
+				<!-- /section:basics/content.breadcrumbs -->
+				<div class="page-content">
+					
+					
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<ul class="ace-thumbnails clearfix">
+							<form action="LaunchProgram.php" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+								<fieldset>
+									<!-- <input type="hidden" name="importFile" id="importFile" value="">
+									Click <a href="javascript:void(0)" onclick="uploadFile();">here</a> to select file to import.
+									<br> -->
+
+
+									<div id="importDiv">																	
+										<h3 class="header smaller lighter blue">
+												Initial Email
+										</h3>
+										<div class="form-group" id="LaunchDateDiv" style="display: none">
+											<label class="col-sm-3 control-label no-padding-right" for="LaunchDate"> Launch Date : </label>
+
+											<div class="col-sm-9">
+												<input id="LaunchDate" type="text" class="col-xs-10 col-sm-5" />
+												<i class="fa fa-clock-o bigger-200"></i>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="ContactList"> Send to : </label>
+
+											<!-- <div class="col-sm-9">
+												<select class="col-xs-10 col-sm-5"  id="ContactList">
+												</select>
+											</div> -->
+											<div class="col-sm-9">
+
+												<label class="col-sm-2">
+													<input name="ContactRadio" type="radio" class="ace" value = "all" onclick="ContactClick('1');" checked/>
+													<span class="lbl">  All Contacts</span>
+												</label>
+												
+												<label class="col-sm-2">
+													<input name="ContactRadio" type="radio" class="ace" value = "list" onclick="ContactClick('2');"/>
+													<span class="lbl">  Contact Lists</span>
+												</label>
+
+												<label class="col-sm-3">
+													<input name="ContactRadio" type="radio" class="ace" value = "email" onclick="ContactClick('3');"/>
+													<span class="lbl">  Contact Emails</span>
+												</label>
+
+												<div id='listDiv' style="display: none">											<br>	
+													<br>
+													<select class="form-control" id="listSelect" multiple="multiple">
+													</select>
+
+												</div>
+
+												<div id='emailDiv' style="display: none">
+													<br>
+													<br>			
+													<select class="form-control" id="emailSelect" multiple="multiple">
+													</select>
+												</div>
+
+											</div>
+										</div>	
+										<!-- <div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="HTMLContent"> HTML Content : </label>
+
+											<div class="col-sm-9">												
+												<div class="wysiwyg-editor" id="editor1"></div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="TextOnlyContent"> Text Only Content : </label>
+
+											<div class="col-sm-9">
+												<textarea class="autosize-transition form-control" id="TextOnlyContent" placeholder="Text Only Content" rows="7"></textarea>
+											</div>
+										</div> -->
+										
+										<h3 class="header smaller lighter blue">
+												Non-Responder Email
+											</h3>
+										<div class="form-group" id="LaunchDateDiv1" style="display: none">
+											<label class="col-sm-3 control-label no-padding-right" for="LaunchDate1"> Launch Date : </label>
+
+											<div class="col-sm-9">
+												<input id="LaunchDate1" type="text" class="col-xs-10 col-sm-5" />
+												<i class="fa fa-clock-o bigger-200"></i>
+											</div>
+										</div>
+										<!-- <div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="ContactList1"> Send to : </label>
+
+											<div class="col-sm-9">
+
+												<label class="col-sm-2">
+													<input name="ContactRadio1" type="radio" class="ace" value = "all" onclick="Contact1Click('1');" checked/>
+													<span class="lbl">  All Contacts</span>
+												</label>
+												
+												<label class="col-sm-2">
+													<input name="ContactRadio1" type="radio" class="ace" value = "list" onclick="Contact1Click('2');"/>
+													<span class="lbl">  Contact Lists</span>
+												</label>
+
+												<label class="col-sm-3">
+													<input name="ContactRadio1" type="radio" class="ace" value = "email" onclick="Contact1Click('3');"/>
+													<span class="lbl">  Contact Emails</span>
+												</label>
+
+												<div id='listDiv1' style="display: none">											<br>	
+													<br>
+													<select class="form-control" id="listSelect1" multiple="multiple">
+													</select>
+
+												</div>
+
+												<div id='emailDiv1' style="display: none">
+													<br>
+													<br>			
+													<select class="form-control" id="emailSelect1" multiple="multiple">
+													</select>
+												</div>
+
+											</div>
+										</div>	 -->
+
+										<!-- <div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="HTMLContent1"> HTML Content : </label>
+
+											<div class="col-sm-9">
+												<div class="wysiwyg-editor" id="editor11"></div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="TextOnlyContent1"> Text Only Content : </label>
+
+											<div class="col-sm-9">
+												<textarea class="autosize-transition form-control" id="TextOnlyContent1" placeholder="Text Only Content" rows="7"></textarea>
+											</div>
+										</div> -->
+
+										<div id='variableDiv' class="form-group">
+											<h3 class="header smaller lighter blue">
+												Social Media Sharing
+											</h3>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="sharename"> Share name : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='sharename' placeholder="Share name" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="sharedescription"> Share description : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='sharedescription' placeholder="Share description" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="sharelink"> Share link : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='sharelink' placeholder="Share link" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="sharepictureurl"> Share picture url : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='sharepictureurl' placeholder="Share picture url" class="col-xs-10 col-sm-8" />
+													<a href="javascript:void(0)" onclick="upload('sharepictureurl');">
+														<i class="fa fa-cloud-upload bigger-200"></i>
+													</a>
+												</div>
+											</div>		
+											<!-- <div id="sharepictureurlDiv" class="form-group" style="display: none">
+												<label class="col-sm-3 control-label no-padding-right" for="dealerbanner"></label>
+
+												<div class="col-sm-9">
+													 <img src="smiley.gif" id='sharepictureurlImg' height="50" width="50"> 
+												</div>
+											</div> -->
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right"></label>
+												<div class="col-sm-9">
+													<li>
+														<a name="sharepictureurlLink" href="" data-rel="colorbox">
+															<img alt="" id='sharepictureurlImg' src="" height="100" onclick="loadPreview('sharepictureurl');"/>
+														</a>
+													</li>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="schedulevisiturl"> Schedule visit url : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='schedulevisiturl' placeholder="Schedule visit url" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="appId"> AppId : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='appId' placeholder="AppId" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+										</div>
+
+										<div id='variableDiv' class="form-group">
+											<h3 class="header smaller lighter blue">
+												Dealer
+											</h3>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="DealerDisplayName"> Dealer name : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='DealerDisplayName' placeholder="Dealer name" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="DealerAddressLine1"> Dealer address line 1 : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='DealerAddressLine1' placeholder="Dealer address line 1" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="DealerAddressLine2"> Dealer address line 2 : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='DealerAddressLine2' placeholder="Dealer address line 2" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="SalesPhone"> Sales phone : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='SalesPhone' placeholder="Sales phone" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="ServicePhone"> Service phone : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='ServicePhone' placeholder="Service phone" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>										
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="DealerHomePage"> Dealer home page : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='DealerHomePage' placeholder="Dealer home page" class="col-xs-10 col-sm-8" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="dealerlogo"> Dealer logo : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='dealerlogo' placeholder="Dealer logo" class="col-xs-10 col-sm-8" />
+													<a href="javascript:void(0)" onclick="upload('dealerlogo');">
+														<i class="fa fa-cloud-upload bigger-200"></i>
+													</a>
+												</div>
+											</div>
+											<!-- <div id="dealerlogoDiv" class="form-group" style="display: none">
+												<label class="col-sm-3 control-label no-padding-right" for="dealerbanner"></label>
+
+												<div class="col-sm-9">
+													 <img src="" id='dealerlogoImg' height="50" width="50"> 
+												</div>
+											</div> -->
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right"></label>
+												<div class="col-sm-9">
+													<li>
+														<a name="dealerlogoLink" href="" data-rel="colorbox">
+															<img alt="" id='dealerlogoImg' src="" height="100" onclick="loadPreview('dealerlogo');"/>
+														</a>
+													</li>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="dealerbanner"> Dealer banner : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='dealerbanner' placeholder="Dealer banner" class="col-xs-10 col-sm-8" />
+													<a href="javascript:void(0)" onclick="upload('dealerbanner');">
+														<i class="fa fa-cloud-upload bigger-200"></i>
+													</a>
+												</div>
+											</div>
+											<!-- <div id="dealerbannerDiv" class="form-group" style="display: none">
+												<label class="col-sm-3 control-label no-padding-right" for="dealerbanner"></label>
+
+												<div class="col-sm-9">
+													 <img src="" id='dealerbannerImg' height="50" width="50"> 
+												</div>
+											</div> -->
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right"></label>
+												<div class="col-sm-9">
+													<li>
+														<a name="dealerbannerLink" href="" data-rel="colorbox">
+															<img alt="" id='dealerbannerImg' src="" height="100" onclick="loadPreview('dealerbanner');"/>
+														</a>
+													</li>
+												</div>
+											</div>
+										</div>
+										<div id='domainDiv' class="form-group" >
+											<h3 class="header smaller lighter blue">
+												Program
+											</h3>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="ProgramName"> Program Name : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='ProgramName' placeholder="Program Name" class="col-xs-10 col-sm-5" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="DomainName"> Microsite Domain : </label>
+
+												<div class="col-sm-9">
+													<select id="DomainName" name="DomainName"> 
+                
+												    </select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="subdomain"> Microsite Sub-folder : </label>
+
+												<div class="col-sm-9">
+													<input type="text" id='subdomain' placeholder="Microsite Sub-folder" class="col-xs-10 col-sm-5" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" ></label>
+
+												<div class="col-sm-9">
+													<label id='urlLabel'></label>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="clearfix form-actions">
+											<div class="col-md-offset-3 col-md-9">
+												<button class="btn btn-info" type="button" id='previewButton' onclick="LaunchProgram('preview');">
+													<i class="ace-icon fa fa-comment-o bigger-110"></i>
+													Preview
+												</button>
+												<button class="btn btn-info" type="button" id='launchButton' onclick="LaunchProgram('launch');">
+													<i class="ace-icon fa fa-check bigger-110"></i>
+													Launch
+												</button>
+
+												
+											</div>
+										</div>
+
+									</div>
+								</fieldset>
+							</form>
+													
+							
+							</ul>
+							<!-- PAGE CONTENT ENDS -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");			
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+		<script src="assets/js/jquery.colorbox-min.js"></script>
+		<script src="assets/js/date-time/moment.min.js"></script>
+		<script src="assets/js/date-time/bootstrap-datetimepicker.min.js"></script>
+		<script src="assets/js/bootstrap-wysiwyg.min.js"></script>
+		<script src="assets/js/jquery-ui.custom.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="assets/js/markdown/markdown.min.js"></script>
+		<script src="assets/js/markdown/bootstrap-markdown.min.js"></script>
+		<script src="assets/js/jquery.hotkeys.min.js"></script>
+		<script src="assets/js/bootbox.min.js"></script>
+		<!-- ace scripts -->
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
+
+		<!-- inline scripts related to this page -->
+		<link rel="stylesheet" href="assets/css/ace.onpage-help.css" />
+
+
+		<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+		<script src="assets/js/ace/ace.onpage-help.js"></script>
+
+		<script type="text/javascript">		
+
+			function loadPreview(objName) {
+				var $overflow = '';
+				var href = $('#'+objName).val();	
+				var colorbox_params = {
+					href: href,
+					rel: 'nofollow',
+					current:'',
+					slideshow:false,
+					reposition:false,
+					scalePhotos:true,
+					scrolling:false,
+					previous:'<i class="ace-icon fa fa-arrow-left"></i>',
+					next:'<i class="ace-icon fa fa-arrow-right"></i>',
+					close:'&times;',
+					maxWidth:'100%',
+					maxHeight:'100%',
+					cboxNext: 'hide',
+					onOpen:function(){
+						$overflow = document.body.style.overflow;
+						document.body.style.overflow = 'hidden';
+						$("#cboxPrevious").hide();
+						$("#cboxNext").hide();
+					},
+					onClosed:function(){
+						document.body.style.overflow = $overflow;
+					},
+					onComplete:function(){
+						$.colorbox.resize();
+					}
+				};
+
+				$('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
+				//$("#cboxLoadingGraphic").append("<i class='ace-icon fa fa-spinner orange'></i>");//let's add a custom loading icon
+			}
+		</script>
+
+
+		<script type="text/javascript">
+			jQuery(function($){
+	
+				function showErrorAlert (reason, detail) {
+					var msg='';
+					if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
+					else {
+						//console.log("error uploading file", reason, detail);
+					}
+					$('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+ 
+					 '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
+				}
+
+				//$('#editor1').ace_wysiwyg();//this will create the default editor will all buttons
+
+				/*
+				//but we want to change a few buttons colors for the third style
+				$('#editor1').ace_wysiwyg({
+					toolbar:
+					[
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						'viewSource'
+					],
+					'wysiwyg': {
+						fileUploadError: showErrorAlert
+					}
+				}).prev().addClass('wysiwyg-style2');
+				*/
+				
+				/**
+				//make the editor have all the available height
+				$(window).on('resize.editor', function() {
+					var offset = $('#editor1').parent().offset();
+					var winHeight =  $(this).height();
+					
+					$('#editor1').css({'height':winHeight - offset.top - 10, 'max-height': 'none'});
+				}).triggerHandler('resize.editor');
+				*/
+				
+
+				$('#editor2').css({'height':'200px'}).ace_wysiwyg({
+					toolbar_place: function(toolbar) {
+						return $(this).closest('.widget-box')
+							   .find('.widget-header').prepend(toolbar)
+							   .find('.wysiwyg-toolbar').addClass('inline');
+					},
+					toolbar:
+					[
+						'bold',
+						{name:'italic' , title:'Change Title!', icon: 'ace-icon fa fa-leaf'},
+						'strikethrough',
+						null,
+						'insertunorderedlist',
+						'insertorderedlist',
+						null,
+						'justifyleft',
+						'justifycenter',
+						'justifyright'
+					],
+					speech_button: false
+				});
+				
+				
+
+
+				$('[data-toggle="buttons"] .btn').on('click', function(e){
+					var target = $(this).find('input[type=radio]');
+					var which = parseInt(target.val());
+					//var toolbar = $('#editor1').prev().get(0);
+					if(which >= 1 && which <= 4) {
+						toolbar.className = toolbar.className.replace(/wysiwyg\-style(1|2)/g , '');
+						if(which == 1) $(toolbar).addClass('wysiwyg-style1');
+						else if(which == 2) $(toolbar).addClass('wysiwyg-style2');
+						if(which == 4) {
+							$(toolbar).find('.btn-group > .btn').addClass('btn-white btn-round');
+						} else $(toolbar).find('.btn-group > .btn-white').removeClass('btn-white btn-round');
+					}
+				});
+
+
+				
+
+				//RESIZE IMAGE
+				
+				//Add Image Resize Functionality to Chrome and Safari
+				//webkit browsers don't have image resize functionality when content is editable
+				//so let's add something using jQuery UI resizable
+				//another option would be opening a dialog for user to enter dimensions.
+				if ( typeof jQuery.ui !== 'undefined' && ace.vars['webkit'] ) {
+					
+					var lastResizableImg = null;
+					function destroyResizable() {
+						if(lastResizableImg == null) return;
+						lastResizableImg.resizable( "destroy" );
+						lastResizableImg.removeData('resizable');
+						lastResizableImg = null;
+					}
+
+					var enableImageResize = function() {
+						$('.wysiwyg-editor')
+						.on('mousedown', function(e) {
+							var target = $(e.target);
+							if( e.target instanceof HTMLImageElement ) {
+								if( !target.data('resizable') ) {
+									target.resizable({
+										aspectRatio: e.target.width / e.target.height,
+									});
+									target.data('resizable', true);
+									
+									if( lastResizableImg != null ) {
+										//disable previous resizable image
+										lastResizableImg.resizable( "destroy" );
+										lastResizableImg.removeData('resizable');
+									}
+									lastResizableImg = target;
+								}
+							}
+						})
+						.on('click', function(e) {
+							if( lastResizableImg != null && !(e.target instanceof HTMLImageElement) ) {
+								destroyResizable();
+							}
+						})
+						.on('keydown', function() {
+							destroyResizable();
+						});
+					};
+
+					enableImageResize();
+
+					/**
+					//or we can load the jQuery UI dynamically only if needed
+					if (typeof jQuery.ui !== 'undefined') enableImageResize();
+					else {//load jQuery UI if not loaded
+						$.getScript($path_assets+"/js/jquery-ui.custom.min.js", function(data, textStatus, jqxhr) {
+							enableImageResize()
+						});
+					}
+					*/
+				}
+
+
+			});
+					</script>
+
+		<script type="text/javascript">
+  			var testID = 0;
+			jQuery(function($) {
+				$('#LaunchDate').datetimepicker().next().on(ace.click_event, function(){
+					$(this).prev().focus();
+				});
+
+				$('#LaunchDate1').datetimepicker().next().on(ace.click_event, function(){
+					$(this).prev().focus();
+				});
+
+				
+
+			});
+			
+			$(document).ready(function(e) {		
+				
+				var canLogin = readCookie("canLogin");
+				if (canLogin == "Yes") {
+					var email = readCookie("loginEmail");
+					var loginAccountName = readCookie("loginAccountName");
+					$('#AccountName').html(loginAccountName);
+					var programName = getParameterByName('programName');
+					$('#programName').html(programName);
+					var loginInfo = loginAccountName+" - "+email;
+					$('#loginInfo').html(loginInfo);
+					var programID = getParameterByName('programID');
+					LoadProgram(programID);
+					$("textarea").attr("readonly", "readonly");
+					$('#launchButton').hide();
+				} else {
+					location.href = 'login.html';
+				}
+			});
+
+			function LoadProgram(programID) {
+				
+				if (programID == '1') {
+					$('#LaunchDateDiv').show();
+					$('#LaunchDateDiv1').show();
+				}
+				GetMaml(programID);
+				GetEmailList();
+				GetImportList();
+			}
+
+			function LaunchProgram(mode) {
+				var programID = getParameterByName('programID');
+				var LaunchDate = $('#LaunchDate').val();
+				if (programID == '1') {
+					if (LaunchDate == '') {
+						alert('Please enter Launch Date.');
+						$('#LaunchDate').focus();
+						return;
+					}
+				}
+				var ContactRadioVal = $('input:radio[name=ContactRadio]:checked').val();
+				
+
+				
+				var emailSelectData = $('#emailSelect').val();				
+				var listSelectData = $('#listSelect').val();
+				if (ContactRadioVal == 'list') {					
+					if (listSelectData == '') {
+						alert('Please select Contact Lists.');
+						return;
+					}
+				} else if (ContactRadioVal == 'email') {
+					if (emailSelectData == '') {
+						alert('Please select Contact Emails.');
+						return;
+					}
+				}
+
+				var LaunchDate1 = $('#LaunchDate1').val();
+				if (programID == '1') {
+					if (LaunchDate1 == '') {
+						alert('Please enter Launch Date.');
+						$('#LaunchDate1').focus();
+						return;
+					}
+				}
+				var ContactRadioVal1 = 'all';
+				
+
+				
+				var emailSelectData1 = $('#emailSelect1').val();				
+				var listSelectData1 = $('#listSelect1').val();
+				if (ContactRadioVal1 == 'list') {					
+					if (listSelectData1 == '') {
+						alert('Please select Contact Lists.');
+						return;
+					}
+				} else if (ContactRadioVal1 == 'email') {
+					if (emailSelectData1 == '') {
+						alert('Please select Contact Emails.');
+						return;
+					}
+				}
+
+				var sharename  = $('#sharename').val();
+				sharename = sharename.trim();
+				if (sharename == '') {
+					alert('Please enter Share name.');
+					$('#sharename').focus();
+					return;
+				}
+				var sharedescription  = $('#sharedescription').val();
+				sharedescription = sharedescription.trim();
+				if (sharedescription == '') {
+					alert('Please enter Share description.');
+					$('#sharedescription').focus();
+					return;
+				}
+				var sharelink  = $('#sharelink').val();
+				sharelink = sharelink.trim();
+				if (sharelink == '') {
+					alert('Please enter Share link.');
+					$('#sharelink').focus();
+					return;
+				}
+				var sharepictureurl  = $('#sharepictureurl').val();
+				sharepictureurl = sharepictureurl.trim();
+				if (sharepictureurl == '') {
+					alert('Please enter Share picture url.');
+					$('#sharepictureurl').focus();
+					return;
+				}
+				var schedulevisiturl  = $('#schedulevisiturl').val();
+				schedulevisiturl = schedulevisiturl.trim();
+				if (schedulevisiturl == '') {
+					alert('Please enter Schedule visit url.');
+					$('#schedulevisiturl').focus();
+					return;
+				}
+				var appId  = $('#appId').val();
+				appId = appId.trim();
+				if (appId == '') {
+					alert('Please enter AppId.');
+					$('#appId').focus();
+					return;
+				}
+
+				var DealerDisplayName  = $('#DealerDisplayName').val();
+				DealerDisplayName = DealerDisplayName.trim();
+				if (DealerDisplayName == '') {
+					alert('Please enter Dealer display name.');
+					$('#DealerDisplayName').focus();
+					return;
+				}
+				var DealerAddressLine1  = $('#DealerAddressLine1').val();
+				DealerAddressLine1 = DealerAddressLine1.trim();
+				if (DealerAddressLine1 == '') {
+					alert('Please enter Dealer address line 1.');
+					$('#DealerAddressLine1').focus();
+					return;
+				}
+				var DealerAddressLine2  = $('#DealerAddressLine2').val();
+				
+				var SalesPhone  = $('#SalesPhone').val();
+				SalesPhone = SalesPhone.trim();
+				if (SalesPhone == '') {
+					alert('Please enter Sales phone.');
+					$('#SalesPhone').focus();
+					return;
+				}
+				var ServicePhone  = $('#ServicePhone').val();
+				ServicePhone = ServicePhone.trim();
+				if (ServicePhone == '') {
+					alert('Please enter Service phone.');
+					$('#ServicePhone').focus();
+					return;
+				}
+				
+				var DealerHomePage  = $('#DealerHomePage').val();
+				DealerHomePage = DealerHomePage.trim();
+				if (DealerHomePage == '') {
+					alert('Please enter Dealer home page.');
+					$('#DealerHomePage').focus();
+					return;
+				}
+				
+				var dealerlogo  = $('#dealerlogo').val();
+				dealerlogo = dealerlogo.trim();
+				if (dealerlogo == '') {
+					alert('Please enter Dealer logo.');
+					$('#dealerlogo').focus();
+					return;
+				}
+				var dealerbanner  = $('#dealerbanner').val();
+				dealerbanner = dealerbanner.trim();
+				if (dealerbanner == '') {
+					alert('Please enter Dealer banner.');
+					$('#dealerbanner').focus();
+					return;
+				}
+				
+				var ProgramName  = $('#ProgramName').val();
+				ProgramName = ProgramName.trim();
+				if (ProgramName == '') {
+					alert('Please enter Program name.');
+					return;
+				}
+				var DomainName  = $('#DomainName').val();
+				DomainName = DomainName.trim();
+				if (DomainName == '') {
+					alert('Please enter domain.');
+					$('#DomainName').focus();
+					return;
+				}
+				DomainName = $('select[name="DomainName"] option:selected').text();
+				var subdomain = $('#subdomain').val();
+	
+				
+				var email = readCookie("loginEmail");
+				var pwd = readCookie("loginPassword");		
+				var account = readCookie("loginAccount");
+				var PartnerGuid = readCookie("PartnerGuid");
+				var PartnerPassword = readCookie("PartnerPassword");
+
+				var selectedEmail = '';
+
+				$('select#emailSelect > option:selected').each(function() {
+					selectedEmail = selectedEmail+','+$(this).val();
+				});
+
+
+				var selectedList = '';
+
+				$('select#listSelect > option:selected').each(function() {
+					selectedList = selectedList+','+$(this).val();
+				});
+
+				var selectedEmail1 = '';
+
+				$('select#emailSelect1 > option:selected').each(function() {
+					selectedEmail1 = selectedEmail1+','+$(this).val();
+				});
+
+
+				var selectedList1 = '';
+
+				$('select#listSelect1 > option:selected').each(function() {
+					selectedList1 = selectedList1+','+$(this).val();
+				});
+
+				testID = testID+1;
+			
+				var projecturl = getProjectURL();			
+				var json = $.getJSON(projecturl+"LaunchProgram.php?callback=?", {
+					email: email,
+					pwd: pwd,
+					account: account,
+					programID: programID,
+					LaunchDate: LaunchDate,
+					ContactRadio: ContactRadioVal,
+					emailData: selectedEmail,
+					listData: selectedList,
+					LaunchDate1: LaunchDate1,
+					ContactRadio1: ContactRadioVal1,
+					emailData1: selectedEmail1,
+					listData1: selectedList1,					
+					ProgramName: ProgramName,
+					DomainName: DomainName,
+					subdomain: subdomain,
+					PartnerGuid: PartnerGuid,
+					PartnerPassword: PartnerPassword,
+					sharename: sharename,
+					sharedescription: sharedescription,
+					sharelink: sharelink,
+					sharepictureurl: sharepictureurl,
+					schedulevisiturl: schedulevisiturl,
+					appId: appId,
+					DealerDisplayName: DealerDisplayName,
+					DealerAddressLine1: DealerAddressLine1,
+					DealerAddressLine2: DealerAddressLine2,
+					SalesPhone: SalesPhone,
+					ServicePhone: ServicePhone,
+					DealerHomePage: DealerHomePage,
+					dealerlogo: dealerlogo,
+					dealerbanner: dealerbanner,
+					mode: mode,
+					testID: testID
+					
+				})
+				.success(function(json) {
+					if( json.success ) {						
+						if (mode == 'preview') {
+							alert("Launch preview successfully.");							
+							$('#urlLabel').html("You can test at <a href='javascript:void(0)' onclick='openTest(\""+json.url+"\");'>"+json.url+"</a>. <br>Please check email of the seed contacts to review content of the emails");							 
+							$('#launchButton').show();
+						} else {						
+							alert("Launch successfully.");
+							location.href = 'Maml.html';						
+						}						
+					} else {
+						alert(json.message);
+					}
+				})
+				.error(function() {
+				  alert("A connection error occured. Please try again.");
+				})
+				.complete(function() {
+				  
+				});
+
+			}
+
+			function openTest(url) {
+				window.open(url);
+			}
+
+			function GetEmailList() {
+				
+				var email = readCookie("loginEmail");
+				var pwd = readCookie("loginPassword");		
+				var account = readCookie("loginAccount");
+				var PartnerGuid = readCookie("PartnerGuid");
+				var PartnerPassword = readCookie("PartnerPassword");
+				var projecturl = getProjectURL();
+				pwd = encodeURIComponent(pwd);
+				var grid_data = []; 
+				grid_data = eval(getRemote(projecturl+'getContact.php?email='+email+'&pwd='+pwd+'&account='+account+'&PartnerGuid='+PartnerGuid+'&PartnerPassword='+PartnerPassword+'&rnd=' + new Date().getTime()));
+				var data = '';
+				for (i = 0; i < grid_data.length; i++) {
+					data += '<option value="'+ grid_data[i]['Email'] +'">'+ grid_data[i]['Email']+' ['+grid_data[i]['FirstName']+' '+grid_data[i]['LastName']+']</option>';
+				}
+				$('#emailSelect').html(data);
+				Sort('emailSelect');	
+				$('#emailSelect1').html(data);
+				Sort('emailSelect1');	
+				
+				
+			}
+
+			function GetImportList() {
+				
+				var email = readCookie("loginEmail");
+				var pwd = readCookie("loginPassword");		
+				var account = readCookie("loginAccount");
+				var PartnerGuid = readCookie("PartnerGuid");
+				var PartnerPassword = readCookie("PartnerPassword");
+				var projecturl = getProjectURL();
+				pwd = encodeURIComponent(pwd);
+				var import_data = []; 
+				import_data = eval(getRemote(projecturl+'getImportName.php?email='+email+'&pwd='+pwd+'&account='+account+'&PartnerGuid='+PartnerGuid+'&PartnerPassword='+PartnerPassword+'&rnd=' + new Date().getTime()));
+				var data = '';
+				for (i = 0; i < import_data.length; i++) {
+					data += '<option value="'+ import_data[i]['Name'] +'">'+ import_data[i]['Name']+'</option>';
+				}
+				$('#listSelect').html(data);
+				Sort('listSelect');	
+				$('#listSelect1').html(data);
+				Sort('listSelect1');	
+				
+				
+			}
+
+			function GetMaml(programID) {
+				var email = readCookie("loginEmail");
+				var pwd = readCookie("loginPassword");		
+				var account = readCookie("loginAccount");
+				var PartnerGuid = readCookie("PartnerGuid");
+				var PartnerPassword = readCookie("PartnerPassword");
+						
+				var projecturl = getProjectURL();
+				var json = $.getJSON(projecturl+"getMaml.php?callback=?", {
+					programID: programID,
+					email: email,
+					pwd: pwd,
+					account: account,
+					PartnerGuid: PartnerGuid,
+					PartnerPassword: PartnerPassword
+				})
+				.success(function(json) {
+					//$('#editor1').html(json.HTMLContent);
+					//$('#TextOnlyContent').html(json.TextOnlyContent);
+
+					//$('#editor11').html(json.HTMLContent1);
+					//$('#TextOnlyContent1').html(json.TextOnlyContent1);
+
+					var data = '<option value="">--Please Select--</option>';
+					var domainid = '';
+					if (json.DomainListArray) {
+						for( var i = 0 ; i < json.DomainListArray.length ; i++ ) {
+							domainid = json.DomainListArray[i][0];
+							data += '<option value="'+ json.DomainListArray[i][0] +'">'+ json.DomainListArray[i][1] +'</option>';
+						}					
+					}
+					if (json.contentArray) {
+						for( var i = 0 ; i < json.contentArray.length ; i++ ) {
+							objname = json.contentArray[i][0];
+							objvalue = json.contentArray[i][1];
+							$('#'+objname).val(objvalue);
+							if ((objname == 'dealerlogo') || (objname == 'dealerbanner') || (objname == 'sharepictureurl')) {
+								if (objvalue != '') {
+									$('#'+objname+'Div').show();
+				   					$('#'+objname+'Img').attr('src',objvalue);
+									$('a.'+objname+'Link').attr("href", objvalue);
+								}
+							}
+						}
+					}
+					if (data != "") {
+						$('#DomainName').html(data);
+					}
+				})
+				.error(function() {
+				  alert("A connection error occured. Please try again.");
+				})
+				.complete(function() {
+				  
+				});
+			}
+
+			function ContactClick(mode) {
+				$('#listDiv').hide();
+				$('#emailDiv').hide();
+				if (mode == '2') {
+					$('#listDiv').show();
+				} else if (mode == '3') {
+					$('#emailDiv').show();
+				}
+			}
+
+			function Contact1Click(mode) {
+				$('#listDiv1').hide();
+				$('#emailDiv1').hide();
+				if (mode == '2') {
+					$('#listDiv1').show();
+				} else if (mode == '3') {
+					$('#emailDiv1').show();
+				}
+			}
+
+			function upload(objName) {
+
+				if (objName == 'dealerbanner') {
+					objLabel = 'Dealer banner';
+				} else if (objName == 'dealerlogo') {			
+					objLabel = 'Dealer logo';
+				} else if (objName == 'sharepictureurl') {					
+					objLabel = 'Share picture url';
+				}
+				var p1 = 'vinconnect';
+				var p2 = 'AKIAJPNTVUGPRWCNTN4A';
+				var p3 = 'BU+W0TvGGEpcytmtUeBbDULzdGfQilO4nzufXtwi';
+				var campaignName = '';
+
+
+
+				campaignName = cleanName(campaignName);
+				var domainName = encodeURIComponent(document.domain);
+				p1 = encodeURIComponent(p1);
+				p2 = encodeURIComponent(p2);
+				p3 = encodeURIComponent(p3);
+
+				var url = "http://ventas.com-ext.com/s3upload/index.php?campaignName="+campaignName+"&objName="+objName+"&domainName="+domainName+"&objLabel="+objLabel+"&p1="+p1+"&p2="+p2+"&p3="+p3;
+				var windowName = "Upload_to_S3";
+				var windowSize = "menubar=no,width=430,height=200,toolbar=no";
+				var win = window.open(url, windowName, windowSize);
+
+				return false;
+
+			}
+
+			function setFile(objName, objFile) {
+		
+				$('#'+objName).val(objFile);
+				$('#'+objName+'Div').show();
+				$('#'+objName+'Img').attr('src',objFile);		
+				$('a.'+objname+'Link').attr("href", objFile);
+				
+			}
+
+			function cleanName(campaignName) {
+				var name = campaignName;
+				name = name.replace(/\s+/gi, '_'); // Replace white space with dash
+				return name.replace(/[^a-zA-Z0-9\_\-]/gi, ''); // Strip any special charactere
+			}
+				
+			
+		</script>
+	</body>
+</html>

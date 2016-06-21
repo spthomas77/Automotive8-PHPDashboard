@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<META HTTP-EQUIV="Expires" CONTENT="-1">
+		<meta charset="utf-8" />
+		<title>Campaign Launcher Login</title>
+
+		<script type="text/JavaScript" src="global.js?n=1"></script> 
+		<meta name="description" content="User login page" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" />
+		<![endif]-->
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+		<link rel="stylesheet" href="assets/css/ace.onpage-help.css" />
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="login-layout">
+		<div class="main-container">
+			<div class="main-content">
+				<div class="row">
+					<br>
+					<div class="col-sm-10 col-sm-offset-1">
+<!--
+					<a class="logo" href="http://www.mindfireinc.com/" title="MindFireInc">
+						<img src="http://mindfireinc.com/wp-content/uploads/2010/09/logo.png" width="240" alt="MindFireInc. Marketings Missing Link." style="border: 0;" />
+					</a>
+-->
+						<div class="login-container">
+							<div class="center">
+                                                                <h1>                                         
+                                                                        <span class="red"></span>
+                                                                        <span class="white" id="id-text2">Marketing Studio</span>
+                                                                </h1>
+								<h4 class="blue" id="id-company-text"></h4>
+							</div>
+
+							<div class="space-6"></div>
+
+							<div class="position-relative">
+								<div id="login-box" class="login-box visible widget-box no-border">
+									<div class="widget-body">
+										<div class="widget-main">
+											<img src="image/MFStudioLogo.png">
+											<h4 class="header blue lighter bigger">
+												</i>
+												Login
+											</h4>
+
+											<div class="space-6"></div>
+
+											<FORM name="loginForm" id="loginForm" method="post">
+												<fieldset>
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control" id='email' value="integrityhyundaisale@gmail.com" placeholder="Username" />
+															<i class="ace-icon fa fa-user"></i>
+														</span>
+													</label>
+
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control" id = 'pwd' value="Integrity1!" placeholder="Password" />
+															<i class="ace-icon fa fa-lock"></i>
+														</span>
+													</label>
+
+													<div id="accountDiv" style="DISPLAY: none;">
+														<label class="block clearfix">
+															
+																<select class="form-control"  id="account">
+																</select>
+																
+															
+														</label>
+
+														<!-- <label class="block clearfix">
+															
+																<select class="form-control"  id="loginMode">										
+																</select>
+																
+															
+														</label> -->
+													</div>
+
+													<div class="space"></div>
+
+													
+
+													<div id="loginDiv" class="clearfix">
+														
+
+														<button type="button" class="width-35 pull-right btn btn-sm btn-primary" onclick="checkLogin();">
+															<i class="ace-icon fa fa-key"></i>
+															<span class="bigger-110">Login</span>
+														</button>
+													</div>
+
+													<div id="continueDiv" class="clearfix" style="DISPLAY: none;">
+														
+
+														<button type="button" class="width-35 pull-right btn btn-sm btn-primary" onclick="callphp();">
+															<i class="ace-icon fa fa-key"></i>
+															<span class="bigger-110">Continue</span>
+														</button>
+													</div>
+													
+													
+
+													<div class="space-4"></div>
+												</fieldset>
+											</form>
+
+											<div class="social-or-login center">
+												
+											</div>
+
+											<div class="space-6"></div>
+											<div id="forgotPwdDiv" class="clearfix" style="DISPLAY: block;">
+													<a href="#" onclick="callForgetpwd();"><span class="blue">Forgot Password?</span></a>
+
+											</div>
+
+											<div class="social-login center">
+												
+											</div>
+										</div><!-- /.widget-main -->
+
+										<div class="toolbar clearfix">
+											<div>
+												
+											</div>
+
+											<div>
+												
+											</div>
+										</div>
+									</div><!-- /.widget-body -->
+								</div><!-- /.login-box -->
+
+								
+
+								
+							</div><!-- /.position-relative -->
+
+							
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.main-content -->
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+			jQuery(function($) {
+			 $(document).on('click', '.toolbar a[data-target]', function(e) {
+				e.preventDefault();
+				var target = $(this).data('target');
+				$('.widget-box.visible').removeClass('visible');//hide others
+				$(target).addClass('visible');//show target
+			 });
+			});
+			
+			function checkLogin() {
+				var ret = false;
+				var email = $("#email").val();
+				var pwd = $("#pwd").val();	
+				var account = "";
+				
+				if (email == "") {
+					alert("Please enter email");
+					$("#email").focus();
+					return ret;
+				}
+				if (pwd == "") {
+					alert("Please enter password");
+					$("#pwd").focus();
+					return ret;
+				}				
+
+				var data = '<option value=""></option>';
+				var projecturl = getProjectURL();
+				var ret = false;
+				var json = $.getJSON(projecturl+"login.php?callback=?", {
+					email: email,
+					pwd: pwd
+				})
+				.success(function(json) {
+					
+					ret = true;
+					if( json.success ) {
+					
+						if (json.mps) {
+							for( var i = 0 ; i < json.mps.length ; i++ ) {
+								data += '<option value="'+ json.mps[i][0] +'">'+ json.mps[i][1] +'</option>';
+							}					
+						}
+						if (data != "") {
+							$('#account').html(data);
+							Sort('account');
+						
+						}	
+						$('#email').attr("disabled", true);
+						$('#pwd').attr("disabled", true);
+
+						var em = email.toLowerCase(); 
+						var n = em.indexOf("@mindfire"); 
+
+						$('#accountDiv').show();
+						$('#continueDiv').show();
+						$('#loginDiv').hide();				
+					} else {
+						alert(json.message);
+						ret = false;
+						
+					}
+				})
+				.error(function() {
+				  alert("A connection error occured. Please try again.");				  
+				});
+				return ret;
+			}
+			
+			
+
+			function callphp() {
+				var ret = false;
+				var email = $("#email").val();
+				var pwd = $("#pwd").val();	
+				var account = $("#account").val();
+				var loginMode = "CTM";
+
+				
+				
+				if (account == "") {
+					alert("Please select account");
+					$("#account").focus();
+					return ret;
+				}
+				var accountName = $('#account option:selected').text();			
+				
+				var projecturl = getProjectURL();
+				var json = $.getJSON(projecturl+"login.php?callback=?", {
+					email: email,
+					pwd: pwd,
+					account: accountName,
+					mode: 'login'
+				})
+				.success(function(json) {
+					
+					ret = true;
+					if( json.success ) {
+						createCookie("loginEmail",email);
+						createCookie("loginPassword",pwd);
+						createCookie("loginAccount",account);
+						createCookie("loginAccountName",accountName);
+						createCookie("loginMode",loginMode);
+						createCookie("canLogin","Yes");
+						createCookie("PartnerGuid",json.PartnerGuid);
+						createCookie("PartnerPassword",json.PartnerPassword);
+						//$("#loginForm").attr("action", "viewContacts.html");						
+						$("#loginForm").attr("action", "dashboard.html");
+						$("#loginForm").submit();				
+					} else {
+						alert(json.message);
+						ret = false;
+						
+					}
+				})
+				.error(function() {
+				  alert("A connection error occured. Please try again.");				  
+				});
+				return ret;
+			}
+
+			function validateEmail(email) {
+				var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				return re.test(email);
+			}
+
+			function callForgetpwd() {
+				var ret = false;
+				var email = $("#email").val();
+				if( validateEmail(email) ){
+					
+					var projecturl = getProjectURL();
+					var json = $.getJSON(projecturl+"forgotPwd.php?callback=?", {
+						email: email						
+					})
+					.success(function(json) {						 
+						alert("An email with instructions on how to reset your password has been sent. If you do not receive it within 5 minutes, check your spam folder."); 
+					})
+					.error(function() {
+					  alert("A connection error occured. Please try again.");				  
+					});
+					
+				}else{
+					alert("Enter the email address you use for your login, and we'll email you instructions on how to reset your password"); 
+				}			
+				
+				return ret;
+			}
+		</script>
+	</body>
+</html>

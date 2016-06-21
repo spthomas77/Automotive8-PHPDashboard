@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<META HTTP-EQUIV="Expires" CONTENT="-1">
+		<meta charset="utf-8" />
+		<title>We Drive Sales Dashboard</title>
+		
+		<script type="text/JavaScript" src="global.js?n=1"></script> 
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+		<!-- <link rel="stylesheet" href="assets/css/datepicker.css" /> -->
+		<link rel="stylesheet" href="assets/css/ui.jqgrid.css" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" />
+		<![endif]-->
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="assets/js/ace-extra.min.js"></script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			.pull-right{padding-right:5px;}
+			.td-padding{padding:2px; }
+		</style>
+	</head>
+	<body class="no-skin" onload="">
+
+		<!-- #section:basics/navbar.layout -->
+		<div id="navbar" class="navbar navbar-default">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+			<div class="navbar-container" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle -->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+					<span class="sr-only">Toggle sidebar</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a href="#" class="navbar-brand">
+						<small>							
+							<!-- <span id='AccountName'></span> -->
+							<img src="image/MFStudioLogo.png">
+						</small>
+					</a>
+					<!-- /section:basics/navbar.layout.brand -->
+					<!-- #section:basics/navbar.toggle -->
+					<!-- /section:basics/navbar.toggle -->
+				</div>
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">						
+					</ul>
+				</div>
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<!-- #section:basics/sidebar -->
+			
+			<div id="sidebar" class="sidebar responsive">
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				</script>			
+
+				<ul class="nav nav-list">
+					<li class="">
+						<a href="#">
+							<i></i>
+							<span class="menu-text"> </span>
+						</a>
+						<b class="arrow"></b>
+					</li>
+					<li class="">
+						<a href="dashboard.html">
+							<i class="menu-icon fa fa-home"></i>
+							<span class="menu-text"> Dashboard </span>
+						</a>
+						<b class="arrow"></b>
+					</li>				
+					<li class="active">
+						<a href="viewContacts.html">
+							<i class="menu-icon fa fa-user"></i>
+							<span class="menu-text"> Contacts </span>
+						</a>
+						<b class="arrow"></b>
+					</li>					
+					<li class="">						
+						<a href="javascript:void(0)" onclick="logout();">
+							<i class="menu-icon fa fa-power-off"></i>
+							<span class="menu-text"> Logout </span>							
+						</a>
+						<b class="arrow"></b>
+					</li>
+				</ul>
+
+				<!-- /.nav-list -->
+
+				<!-- #section:basics/sidebar.layout.minimize -->
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+
+				<!-- /section:basics/sidebar.layout.minimize -->
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+			</div> 
+
+			<!-- /section:basics/sidebar -->
+			
+			<div class="main-content">
+				<!-- #section:basics/content.breadcrumbs -->
+				<div class="breadcrumbs" id="breadcrumbs">
+					<script type="text/javascript">
+						try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+					</script>
+					<!-- <ul class="breadcrumb"> -->
+					<ul class="breadcrumb" style="width:86%;">								
+						<img height="16" src="https://s3.amazonaws.com/reports.mindfirestudioapps.com/images/icon-search-black.png"><input type="text" id="searchData" placeholder="Filter by FirstName, LastName, Email" style="width:300px;">&nbsp;<input type="button" onclick="$('#rAll').prop('checked', true);clickChange(true);" value="Search">
+
+						<table cellspacing=0 cellpadding=0 border=0 class="pull-right">
+						<tr>
+							<td class="td-padding">All Contacts <input type="radio" id = 'rAll' name="mode" value="All" onchange="clickChange(false);" checked></td>
+							<td class="td-padding">Leads <input type="radio" id = 'rLeads' name="mode" value="Leads" onchange="clickChange(false);"></td>
+							<td class="td-padding">Incompletes <input type="radio" id = 'rIncompletes' name="mode" value="Incompletes" onchange="clickChange(false);"></td>
+							<td class="td-padding">Follow-Up <input type="radio" id = 'rFollowup' name="mode" value="FollowUp" onchange="clickChange(false);"></td>
+							<td class="td-padding">Appointment <input type="radio" id = 'rAppointment' name="mode" value="Appointment" onchange="clickChange(false);"></td>
+							<td class="td-padding">In Progess <input type="radio" id = 'rInProgress' name="mode" value="InProgress" onchange="clickChange(false);"></td>
+							<td class="td-padding">Sold <input type="radio" id = 'rSold' name="mode" value="Sold" onchange="clickChange(false);"></td>
+							<td class="td-padding">Lost <input type="radio" id = 'rLost' name="mode" value="Lost" onchange="clickChange(false);"></td>							
+						</tr>
+						</table>
+
+					</ul><!-- /.breadcrumb -->
+					
+					<button class="btn btn-danger" style="float: right;" onclick="showSetup();">
+						<i class="ace-icon fa fa-cogs"></i>
+					</button> 
+					
+					<button class="btn btn-success" style="float: right;" onclick="ExportData();">
+						<i class="ace-icon fa fa-download"></i>
+					</button> 			
+					
+				</div>				
+
+				<!-- /section:basics/content.breadcrumbs -->
+				<div class="page-content">					
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<div class="row">
+								<div style="display: none;" id="lui_list" class="ui-widget-overlay jqgrid-overlay"></div>
+								<div style="display: none;z-index:100;" id="loadingDiv" class="loading ui-state-default ui-state-active">Loading...
+								<img src="image/loading.gif">
+								</div>
+								<table id="grid-table"></table>
+								<div id="grid-pager"></div>
+								
+								<div id="configDiv" style="display: None;">
+								<select class="form-control" id="listSelect"></select>
+								</div>								
+							<!-- PAGE CONTENT ENDS -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");			
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+		<script type="text/javascript">
+		 window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+		<script src="assets/js/jquery.dataTables.min.js"></script>
+		<script src="assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+		<script src="assets/js/jqGrid/i18n/grid.locale-en.js"></script>
+
+		<!-- ace scripts -->
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
+		<!-- <script src="assets/js/date-time/bootstrap-datepicker.min.js"></script> -->
+
+		<!-- dTimepicker -->			
+		<script src="assets/js/date-time/dtimepicker/jquery-ui.js"></script>
+		<link rel="stylesheet" href="assets/js/date-time/dtimepicker/jquery-ui-timepicker-addon.css" />
+		<script src="assets/js/date-time/dtimepicker/jquery-ui-timepicker-addon.js"></script>
+		<script src="assets/js/date-time/dtimepicker/jquery-ui-timepicker-addon-i18n.min.js"></script>
+
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">					
+			var grid_data = []; 
+			var grid_col = [];
+			var grid_model = [];
+			Search(false,false);
+			
+			jQuery(function($) {
+				var grid_selector = "#grid-table";
+				var pager_selector = "#grid-pager";
+				
+				//resize to fit page size
+				$(window).on('resize.jqGrid', function () {
+					$(grid_selector).jqGrid( 'setGridWidth', $(".page-content").width() );
+			    });
+				//resize on sidebar collapse/expand
+				var parent_column = $(grid_selector).closest('[class*="col-"]');
+				$(document).on('settings.ace.jqGrid' , function(ev, event_name, collapsed) {
+					if( event_name === 'sidebar_collapsed' || event_name === 'main_container_fixed' ) {
+						$(grid_selector).jqGrid( 'setGridWidth', parent_column.width() );
+					}
+			    });
+			
+				jQuery(grid_selector).jqGrid({
+					//direction: "rtl",					
+					data: grid_data,
+					datatype: "local",
+					height: 400,
+					colNames: grid_col,
+					colModel: grid_model, 						
+
+					ondblClickRow: function(rowid,iRow,iCol,e){						
+						jQuery(this).jqGrid('editGridRow', rowid,
+                        {							
+							closeAfterEdit: true,
+							width: 400,
+							recreateForm: true,						
+							beforeShowForm : function(e) {
+								var form = $(e[0]);					
+								form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />');
+								style_edit_form(form);
+							},
+							ajaxEditOptions: jsonOptions,
+								serializeEditData: function (data) {
+								item = createItem('edit', data);							
+								return JSON.stringify(item);							
+							},
+							afterSubmit : function(response, postdata)
+							{
+								var rt = response.responseText;
+								rt = rt.trim();
+								if (rt == 'OK') {
+									reloadGrid(false);
+									return [true,'',null];								
+								} else {
+									return [false,response.responseText,null]; 
+								}							
+							}
+						});
+					},
+					ignoreCase:true,			
+					viewrecords : true,
+					rowNum:30,
+					rowList:[30,60,90],
+					pager : pager_selector,
+					altRows: true,
+					//toppager: true,					
+					multiselect: false,
+					//multikey: "ctrlKey",
+			        multiboxonly: false,
+					sortname : "VisitDate",
+				    sortorder : "desc",
+					loadComplete : function() {
+						var table = this;
+						setTimeout(function(){			
+							updatePagerIcons(table);							
+						}, 0);
+					},			
+					//editurl: "/dummy.html",//nothing is saved
+					
+					editurl: "viewContacts.php",
+					caption: "View Contacts"			
+					//,autowidth: true,			
+				});
+				$(window).triggerHandler('resize.jqGrid');//trigger window resize to make the grid get the correct size
+				
+				//navButtons
+				jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+					{ 	//navbar options
+						edit: true,
+						editicon : 'ace-icon fa fa-pencil blue',
+						add: false,
+						addicon : 'ace-icon fa fa-plus-circle purple',
+						del: false,
+						delicon : 'ace-icon fa fa-trash-o red',
+						search: true,
+						searchicon : 'ace-icon fa fa-search orange',
+						refresh: true,
+						refreshicon : 'ace-icon fa fa-refresh green',
+						view: false,
+						viewicon : 'ace-icon fa fa-search-plus grey',
+					},
+					{
+						//edit record form
+						closeAfterEdit: true,
+						width: 400,
+						recreateForm: true,						
+						beforeShowForm : function(e) {
+							var form = $(e[0]);					
+							form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />');
+							style_edit_form(form);
+						},
+						ajaxEditOptions: jsonOptions,
+						serializeEditData: function (data) {
+							item = createItem('edit', data);							
+							return JSON.stringify(item);							
+						},
+						afterSubmit : function(response, postdata)
+						{
+							var rt = response.responseText;
+							rt = rt.trim();
+							if (rt == 'OK') {
+								reloadGrid(false);
+								return [true,'',null];								
+							} else {
+								return [false,response.responseText,null]; 
+							}							
+						} 
+					},
+					{
+						//new record form
+						width: 400,
+						closeAfterAdd: true,
+						recreateForm: true,
+						viewPagerButtons: false,
+						beforeShowForm : function(e) {
+							var form = $(e[0]);
+							form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar')
+							.wrapInner('<div class="widget-header" />');
+							style_edit_form(form);
+						},
+						ajaxEditOptions: jsonOptions,
+						serializeEditData: function (data) {							
+							item = createItem('add', data);							
+							return JSON.stringify(item);
+						},
+						afterSubmit : function(response, postdata)
+						{
+							var rt = response.responseText;
+							rt = rt.trim();
+							if (rt == 'OK') {
+								reloadGrid(false);
+								return [true,'',null];								
+							} else {
+								return [false,response.responseText,null]; 
+							}	
+						
+						}
+
+					},
+					{
+						//delete record form
+						recreateForm: true,
+						beforeShowForm : function(e) {
+							var form = $(e[0]);
+							if(form.data('styled')) return false;
+							
+							form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />');
+							style_delete_form(form);
+							
+							form.data('styled', true);
+						},
+						onClick : function(e) {
+							//alert(1);
+						}
+					},
+					{
+						//search form
+						recreateForm: true,
+						afterShowSearch: function(e){
+							var form = $(e[0]);
+							form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />');
+							style_search_form(form);
+						},
+						afterRedraw: function(){
+							style_search_filters($(this));
+						}
+						,
+						multipleSearch: true,
+						/**
+						multipleGroup:true,
+						showQuery: true
+						*/
+					},					
+					{
+						//view record form
+						recreateForm: true,
+						beforeShowForm: function(e){
+							var form = $(e[0]);
+							form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+						}
+					}
+					
+				);
+				
+				function style_edit_form(form) {					
+					//update buttons classes
+					var buttons = form.next().find('.EditButton .fm-button');
+					buttons.addClass('btn btn-sm').find('[class*="-icon"]').hide();//ui-icon, s-icon
+					buttons.eq(0).addClass('btn-primary').prepend('<i class="ace-icon fa fa-check"></i>');
+					buttons.eq(1).prepend('<i class="ace-icon fa fa-times"></i>');
+					
+					buttons = form.next().find('.navButton a');
+					buttons.find('.ui-icon').hide();
+					buttons.eq(0).append('<i class="ace-icon fa fa-chevron-left"></i>');
+					buttons.eq(1).append('<i class="ace-icon fa fa-chevron-right"></i>');	
+				}
+			
+				function style_delete_form(form) {
+					var buttons = form.next().find('.EditButton .fm-button');
+					buttons.addClass('btn btn-sm btn-white btn-round').find('[class*="-icon"]').hide();//ui-icon, s-icon
+					buttons.eq(0).addClass('btn-danger').prepend('<i class="ace-icon fa fa-trash-o"></i>');
+					buttons.eq(1).addClass('btn-default').prepend('<i class="ace-icon fa fa-times"></i>')
+				}
+				
+				function style_search_filters(form) {
+					form.find('.delete-rule').val('X');
+					form.find('.add-rule').addClass('btn btn-xs btn-primary');
+					form.find('.add-group').addClass('btn btn-xs btn-success');
+					form.find('.delete-group').addClass('btn btn-xs btn-danger');
+				}
+
+				function style_search_form(form) {
+					var dialog = form.closest('.ui-jqdialog');
+					var buttons = dialog.find('.EditTable');
+					buttons.find('.EditButton a[id*="_reset"]').addClass('btn btn-sm btn-info').find('.ui-icon').attr('class', 'ace-icon fa fa-retweet');
+					buttons.find('.EditButton a[id*="_query"]').addClass('btn btn-sm btn-inverse').find('.ui-icon').attr('class', 'ace-icon fa fa-comment-o');
+					buttons.find('.EditButton a[id*="_search"]').addClass('btn btn-sm btn-purple').find('.ui-icon').attr('class', 'ace-icon fa fa-search');
+				}
+				
+				function beforeDeleteCallback(e) {
+					var form = $(e[0]);
+					if(form.data('styled')) return false;
+					
+					form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />');
+					style_delete_form(form);
+					
+					form.data('styled', true);
+				}
+				
+				function beforeEditCallback(e) {
+					var form = $(e[0]);
+					form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />');
+					style_edit_form(form);
+				}			
+				
+				//replace icons with FontAwesome icons like above
+				function updatePagerIcons(table) {
+					var replacement = 
+					{
+						'ui-icon-seek-first' : 'ace-icon fa fa-angle-double-left bigger-140',
+						'ui-icon-seek-prev' : 'ace-icon fa fa-angle-left bigger-140',
+						'ui-icon-seek-next' : 'ace-icon fa fa-angle-right bigger-140',
+						'ui-icon-seek-end' : 'ace-icon fa fa-angle-double-right bigger-140'
+					};
+					$('.ui-pg-table:not(.navtable) > tbody > tr > .ui-pg-button > .ui-icon').each(function(){
+						var icon = $(this);
+						var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
+						
+						if($class in replacement) icon.attr('class', 'ui-icon '+replacement[$class]);
+					})
+				}
+				
+				function enableTooltips(table) {
+					$('.navtable .ui-pg-button').tooltip({container:'body'});
+					$(table).find('.ui-pg-div').tooltip({container:'body'});
+				}
+			
+			});			
+
+			function Search(_async,isSearchbox) {
+
+				var email = readCookie("loginEmail");
+				var pwd = readCookie("loginPassword");		
+				var account = readCookie("loginAccount");
+				var PartnerGuid = readCookie("PartnerGuid");
+				var PartnerPassword = readCookie("PartnerPassword");				
+				var account = readCookie("loginAccount");
+
+				var mode= $("input[name='mode']:checked").val(); 	
+				if(isSearchbox){
+					mode = 'All'; //searchbox use with only type All					
+				}
+				var searchData = $('#searchData').val(); 
+
+				var projecturl = getProjectURL();
+				pwd = encodeURIComponent(pwd);
+	
+				projecturl = projecturl+'getFilter.php?report_mode='+mode+'&searchData='+searchData+'&email='+email+'&pwd='+pwd+'&account='+account+'&PartnerGuid='+PartnerGuid+'&PartnerPassword='+PartnerPassword+'&rnd=' + new Date().getTime();
+
+				$.ajax(
+				{
+					type: "GET",
+					dataType: 'json',
+					url: projecturl,
+					//async: true,
+					async: _async,
+					success: function(result)
+					{
+						grid_data = eval(result.data);
+						grid_col = result.colNames;
+						grid_model = result.colModel;
+						//datepicker
+						for(i = 0; i < grid_model.length; i++){ 
+
+							var gm = grid_model[i];
+							var name = gm['name'];
+							if (name == 'Appointment_Date') {
+								//editoptions = { dataInit: function(elem) {$(elem).datepicker({dateFormat:'mm/dd/yyyy'})} };
+								//dTimepicker
+								editoptions = { dataInit: function(elem) {$(elem).datetimepicker({controlType: 'select',oneLine: true,hourMin: 9,hourMax: 19,stepMinute: 15,timeFormat: 'h:mm tt'})} };
+								gm['editoptions'] = editoptions;
+								grid_model[i] = gm;
+							}
+							if (name == 'Followup_Date') {
+								//datepicker
+								editoptions = { dataInit: function(elem) {$(elem).datepicker()} };
+								gm['editoptions'] = editoptions;
+								grid_model[i] = gm;
+							}
+						}	
+						if(_async){
+							console.log("Async");
+							jQuery("#grid-table").jqGrid("clearGridData");
+							jQuery('#grid-table').jqGrid().setGridParam(
+								{
+									data: grid_data
+								}
+							).trigger("reloadGrid");
+							
+							$("#loadingDiv").hide(); 	
+						}
+						
+					},
+					error: function(x, e)
+					{
+						alert(x.readyState + " "+ x.status +" "+ e.msg);   
+					}
+				});
+			}
+
+					
+			
+			var jsonOptions = {
+				type :"POST",
+				contentType :"application/json; charset=utf-8",
+				dataType :"json"
+			};
+
+			$(document).ready(function(e) {				
+				var canLogin = readCookie("canLogin");
+				if (canLogin == "Yes") {
+				
+				} else {
+					location.href = 'login.html';
+				}
+			});
+				
+			//isSearchbox = true / search by searchbox above
+			function reloadGrid(isSearchbox) {
+				Search(true,isSearchbox);						
+			}
+			
+			function clickChange(isSearchbox){				
+				$("#grid-table").closest(".ui-jqgrid").find('.loading').show();
+				reloadGrid(isSearchbox) ; 					
+			}				
+
+			function showSetup() {				
+				var email = readCookie("loginEmail");
+				var pwd = readCookie("loginPassword");		
+				var account = readCookie("loginAccount");
+				var projecturl = getProjectURL();
+				pwd = encodeURIComponent(pwd);
+				projecturl = projecturl+'showSetup.html?email='+email+'&pwd='+pwd+'&account='+account+'&rnd=' + new Date().getTime();
+				var name = "fieldsPopup";
+				//var o = "width=600,height=450,scrollbars=0,resizable=0";
+				//accountOpen = window.open(projecturl, name, o);
+				var params = [
+			    'height=500',
+			    'width='+screen.width,
+			    'fullscreen=yes' // only works in IE, but here for completeness
+				].join(',');
+			     // and any other options from
+			     // https://developer.mozilla.org/en/DOM/window.open
+				var popup = window.open(projecturl, name, params); 
+				popup.moveTo(0,0);				
+			}
+			
+			//*****IMPORTANT $FieldHeader****
+			//this function must match with getResetHeader($label) >> share.php
+			function getResetHeader(label){	
+				var header = label ;  
+				if(label=='Sale Status'){
+					header ='Sold_Lost';
+				}else if(label == 'Follow Up Date'){
+					header ='Followup_Date';
+
+				}else if(label == 'Follow Up'){
+					header ='FollowUp';
+
+				}else if(label == 'Sales Person'){
+					header ='SalesmanCode';	
+				}else{
+					header = label;
+				}
+				return header; 
+			}
+
+
+			function createItem(mode, data) {				
+				var loginEmail = readCookie("loginEmail");
+				var loginPassword = readCookie("loginPassword");	
+				var loginAccount = readCookie("loginAccount");
+				var PartnerGuid = readCookie("PartnerGuid");
+				var PartnerPassword = readCookie("PartnerPassword");
+				item = {};
+				item ["loginEmail"] = loginEmail;
+				item ["loginPassword"] = loginPassword;
+				item ["loginAccount"] = loginAccount;
+				item ["mode"] = mode;
+				item ["PartnerGuid"] = PartnerGuid;
+				item ["PartnerPassword"] = PartnerPassword;
+				var aCount = grid_col.length;
+				for (var i = 0; i < aCount; i++) {
+					var fname = grid_col[i];
+
+					var resetHeader = getResetHeader(fname); 
+					fname = resetHeader; 
+
+					$.each(data, function(key, value) {
+						if (key == fname) {
+							item [fname] = value;
+						}
+					});
+				}
+				return item;
+			}
+
+			function ExportData() {
+				//var currentfilter = $("#grid-table").jqGrid('getGridParam','postData').filters;
+				//alert(currentfilter);
+				//alert($("#grid-table").text());				
+				var email = readCookie("loginEmail");
+				var pwd = readCookie("loginPassword");		
+				var account = readCookie("loginAccount");
+				var projecturl = getProjectURL();
+				var PartnerGuid = readCookie("PartnerGuid");
+				var PartnerPassword = readCookie("PartnerPassword");
+				pwd = encodeURIComponent(pwd);
+
+				var mode= $("input[name='mode']:checked").val(); 	
+				var searchData = $('#searchData').val(); 
+
+				projecturl = projecturl+'getExportData.php?report_mode='+mode+'&searchData='+searchData+'&email='+email+'&pwd='+pwd+'&account='+account+'&PartnerGuid='+PartnerGuid+'&PartnerPassword='+PartnerPassword+'&rnd=' + new Date().getTime();
+				var postData = $("#grid-table").jqGrid("getGridParam", "postData");
+  			    if (postData.filters) {
+					  projecturl = projecturl+'&'+$.param({filters: postData.filters});
+				}
+				window.open(projecturl);
+			}	
+			
+			
+
+		</script>
+	</body>
+</html>

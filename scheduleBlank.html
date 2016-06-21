@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> asset redirect </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script type="text/javascript">
+  function sendToAsset() {
+
+			//alert('sendToAsset');  
+			
+			var filename = gup("filename");
+
+			window.opener.setFile(filename);
+			window.close();
+
+	}
+	
+	function gup( name ){
+		name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");  
+		var regexS = "[\\?&]"+name+"=([^&#]*)";  
+		var regex = new RegExp( regexS );  
+		var results = regex.exec( window.location.href ); 
+		 if( results == null )    return "";  
+		else    return results[1];
+	}
+	
+
+ 
+
+	</script> 
+ </head>
+
+ <body onload="sendToAsset();">
+  sendToAsset
+ </body>
+</html>
+
+
+

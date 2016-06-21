@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<META HTTP-EQUIV="Expires" CONTENT="-1">
+		<meta charset="utf-8" />
+		<title>xmedialauncher</title>
+		
+		<script type="text/JavaScript" src="global.js?n=1"></script> 
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+		<!-- page specific plugin styles -->
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/chosen.css" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" />
+		<![endif]-->
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="assets/js/ace-extra.min.js"></script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="no-skin">
+		<!-- #section:basics/navbar.layout -->
+		<div id="navbar" class="navbar navbar-default">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle -->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a href="#" class="navbar-brand">
+						<small>
+							
+							<!-- <span id='AccountName'></span> -->
+							<img src="image/MFStudioLogo.png">
+						</small>
+					</a>
+
+					<!-- /section:basics/navbar.layout.brand -->
+
+					<!-- #section:basics/navbar.toggle -->
+
+					<!-- /section:basics/navbar.toggle -->
+				</div>
+
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						
+
+						
+					</ul>
+				</div>
+
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<!-- #section:basics/sidebar -->
+			<div id="sidebar" class="sidebar                  responsive">
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				</script>
+
+				
+
+				<ul class="nav nav-list">
+					<li class="">
+						<a href="#">
+							<i></i>
+							<span class="menu-text"> </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+					
+					<li class="">
+						<a href="dashboard.html">
+							<i class="menu-icon fa fa-briefcase"></i>
+							<span class="menu-text"> My Program </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>				
+					
+
+					<li class="active open">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-user"></i>
+							<span class="menu-text"> Contacts </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="contacts.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Upload Contacts
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="active">
+								<a href="addContacts.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Add New Contact
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="viewContacts.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									View Contacts
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							
+						</ul>
+
+					</li>
+
+					<li class="">
+						<a href="Maml.html">
+							<i class="menu-icon fa fa-list-alt"></i>
+							<span class="menu-text"> Launch New Program </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a href="Account.html">
+							<i class="menu-icon fa fa-comments"></i>
+							<span class="menu-text"> Account </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a href="users.html">
+							<i class="menu-icon fa fa-users"></i>
+							<span class="menu-text"> User </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						
+						<a href="javascript:void(0)" onclick="logout();">
+							<i class="menu-icon fa fa-power-off"></i>
+							<span class="menu-text"> Logout </span>							
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					
+
+					
+
+					
+				</ul><!-- /.nav-list -->
+
+				<!-- #section:basics/sidebar.layout.minimize -->
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+
+				</div>
+
+				<!-- /section:basics/sidebar.layout.minimize -->
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+			</div>
+
+			<!-- /section:basics/sidebar -->
+			
+			<div class="main-content">
+				<!-- #section:basics/content.breadcrumbs -->
+				<div class="breadcrumbs" id="breadcrumbs">
+					<script type="text/javascript">
+						try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+					</script>
+
+					<ul class="breadcrumb">
+						<li>
+							<i class="ace-icon fa fa-home home-icon"></i>
+							<a href="#">Home</a>
+						</li>
+
+						<li>
+							<a href="#">Contacts</a>
+						</li>
+						<li class="active">Add New Contact</li>
+					</ul><!-- /.breadcrumb -->
+
+					
+				</div>
+
+				<!-- /section:basics/content.breadcrumbs -->
+				<div class="page-content">
+					
+					
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<form action="addContacts.php" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+								<fieldset>
+									<!-- <input type="hidden" name="importFile" id="importFile" value="">
+									Click <a href="javascript:void(0)" onclick="uploadFile();">here</a> to select file to import.
+									<br> -->
+
+
+									<div id="importDiv">																	
+
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="firstName"> First Name* : </label>
+
+											<div class="col-sm-9">
+												<input type="text" id='firstName' placeholder="First Name" class="col-xs-10 col-sm-5" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="lastName"> Last Name* : </label>
+
+											<div class="col-sm-9">
+												<input type="text" id='lastName' placeholder="Last Name" class="col-xs-10 col-sm-5" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="email"> Email* : </label>
+
+											<div class="col-sm-9">
+												<input type="text" id='email' placeholder="Email" class="col-xs-10 col-sm-5" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="phone"> Phone : </label>
+
+											<div class="col-sm-9">
+												<input type="text" id='phone' placeholder="phone" class="col-xs-10 col-sm-5" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="address"> Address : </label>
+
+											<div class="col-sm-9">
+												<input type="text" id='address' placeholder="address" class="col-xs-10 col-sm-5" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="city"> City : </label>
+
+											<div class="col-sm-9">
+												<input type="text" id='city' placeholder="city" class="col-xs-10 col-sm-5" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="state"> State : </label>
+
+											<div class="col-sm-9">
+												<select class="col-xs-10 col-sm-5" id="state" >
+													<option value="">  </option>
+													<option value="AL">Alabama</option>
+													<option value="AK">Alaska</option>
+													<option value="AZ">Arizona</option>
+													<option value="AR">Arkansas</option>
+													<option value="CA">California</option>
+													<option value="CO">Colorado</option>
+													<option value="CT">Connecticut</option>
+													<option value="DE">Delaware</option>
+													<option value="FL">Florida</option>
+													<option value="GA">Georgia</option>
+													<option value="HI">Hawaii</option>
+													<option value="ID">Idaho</option>
+													<option value="IL">Illinois</option>
+													<option value="IN">Indiana</option>
+													<option value="IA">Iowa</option>
+													<option value="KS">Kansas</option>
+													<option value="KY">Kentucky</option>
+													<option value="LA">Louisiana</option>
+													<option value="ME">Maine</option>
+													<option value="MD">Maryland</option>
+													<option value="MA">Massachusetts</option>
+													<option value="MI">Michigan</option>
+													<option value="MN">Minnesota</option>
+													<option value="MS">Mississippi</option>
+													<option value="MO">Missouri</option>
+													<option value="MT">Montana</option>
+													<option value="NE">Nebraska</option>
+													<option value="NV">Nevada</option>
+													<option value="NH">New Hampshire</option>
+													<option value="NJ">New Jersey</option>
+													<option value="NM">New Mexico</option>
+													<option value="NY">New York</option>
+													<option value="NC">North Carolina</option>
+													<option value="ND">North Dakota</option>
+													<option value="OH">Ohio</option>
+													<option value="OK">Oklahoma</option>
+													<option value="OR">Oregon</option>
+													<option value="PA">Pennsylvania</option>
+													<option value="RI">Rhode Island</option>
+													<option value="SC">South Carolina</option>
+													<option value="SD">South Dakota</option>
+													<option value="TN">Tennessee</option>
+													<option value="TX">Texas</option>
+													<option value="UT">Utah</option>
+													<option value="VT">Vermont</option>
+													<option value="VA">Virginia</option>
+													<option value="WA">Washington</option>
+													<option value="WV">West Virginia</option>
+													<option value="WI">Wisconsin</option>
+													<option value="WY">Wyoming</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Zip : </label>
+
+											<div class="col-sm-9">
+												<input type="text" id='zip' placeholder="zip" class="col-xs-10 col-sm-5" />
+											</div>
+										</div>									
+
+										<div class="clearfix form-actions">
+											<div class="col-md-offset-3 col-md-9">
+												<button class="btn btn-info" type="button" onclick="importContacts();">
+													<i class="ace-icon fa fa-check bigger-110"></i>
+													Add
+												</button>
+
+												
+											</div>
+										</div>
+
+									</div>
+								</fieldset>
+							</form>
+							
+
+							<!-- PAGE CONTENT ENDS -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
+
+			
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<!-- ace scripts -->
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
+
+		<!-- inline scripts related to this page -->
+		<link rel="stylesheet" href="assets/css/ace.onpage-help.css" />
+
+
+		<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+		<script src="assets/js/ace/ace.onpage-help.js"></script>
+
+
+
+		<script type="text/javascript">
+			
+			$(document).ready(function(e) {
+		
+				//$("#importDiv").hide();
+				var canLogin = readCookie("canLogin");
+				if (canLogin == "Yes") {
+					var loginAccountName = readCookie("loginAccountName");
+					$('#AccountName').html(loginAccountName);
+				} else {
+					location.href = 'login.html';
+				}
+			});
+
+			function importContacts() {
+				var ret = false;
+
+				var email = readCookie("loginEmail");
+				var pwd = readCookie("loginPassword");		
+				var firstName = $('#firstName').val();				
+				var lastName = $('#lastName').val();
+				var emailData = $('#email').val();
+				var phone = $('#phone').val();
+				var address = $('#address').val();
+				var city = $('#city').val();
+				var state = $('#state').val();
+				var zip = $('#zip').val();
+				var account = readCookie("loginAccount");
+				
+				if (firstName == '') {
+					alert('Please enter First Name.');
+					return;
+				}
+				if (lastName == '') {
+					alert('Please enter Last Name.');
+					return;
+				}
+				if (emailData == '') {
+					alert('Please enter email.');
+					return;
+				} else if (!(checkEmail(emailData))) {
+					alert('Please enter a valid email.');
+					return false;
+				}
+				
+				
+				var projecturl = getProjectURL();
+				var json = $.getJSON(projecturl+"addContacts.php?callback=?", {
+					email: email,
+					pwd: pwd,			
+					firstName: firstName,
+					lastName: lastName,
+					emailData: emailData,
+					phone: phone,
+					address: address,
+					city: city,
+					state: state,
+					zip: zip,
+					account: account,
+					mode: 'add'
+				})
+				.success(function(json) {
+					if( json.success ) {
+						alert("Add new contact successfully.");
+						location.href = 'addContacts.html';
+					} else {
+						alert(json.message);
+					}
+				})
+				.error(function() {
+				  alert("A connection error occured. Please try again.");				  
+				})
+				.complete(function() {
+				  
+				});
+				return ret;
+			}
+
+			
+		</script>
+	</body>
+</html>
